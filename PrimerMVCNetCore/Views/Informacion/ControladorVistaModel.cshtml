@@ -1,0 +1,29 @@
+﻿@model Persona
+
+<h1>
+	Informacion Controlador  -> VIsta - Modelo
+</h1>
+
+
+
+
+@if(Model != null){
+	<ul>
+		<li style="color:blue">
+			Nombre: @Model.Nombre
+		</li>
+
+		<li style="color:blue">
+			Email: @Model.Email
+		</li>
+
+		<li style="color:blue">
+			Edad: @Model.Edad
+		</li>
+	</ul>
+}else{
+	<h1 style="color:red">No hay informacion</h1>
+}
+
+	@Html.ActionLink("Volver", "Index", "Informacion")
+

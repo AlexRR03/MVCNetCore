@@ -1,0 +1,24 @@
+﻿@{
+	//Estos es codigo C#
+
+	int valor = 26;
+	string texto = "Estamos a finales de enero";
+	valor += 1;
+	texto += " y el siguiente mes es febrero";
+	texto = texto.ToUpper();
+}
+
+<h2 style="color:red">
+	Texto: @texto Numero: @valor
+</h2>
+
+
+@if (valor > 0){
+	texto = "Positivo";
+	<h3 style="color:green">@texto</h3>
+}else{
+	texto = "Negativo";
+	<h3 style="color:orangered">@texto</h3>
+}
+
+@Html.ActionLink("Volver","PrimeraPagina","Prueba")
