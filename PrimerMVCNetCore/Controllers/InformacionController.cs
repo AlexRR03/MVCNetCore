@@ -31,7 +31,15 @@ namespace PrimerMVCNetCore.Controllers
         }
         public IActionResult VistaControllerGet(string saludo, int year) 
         {
-            ViewData["DATA"] = "Hola " + saludo + ", año:" +year;
+            if (saludo != null && year > 0)
+            {
+                ViewData["DATA"] = "Hola " + saludo + ", año:" + year;
+            }
+            else
+            {
+                ViewData["DATA"] = "No se envia el parametro de saludo";
+            }
+            
             return View();
         }
     }

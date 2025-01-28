@@ -10,7 +10,15 @@
 		<a asp-controller="Informacion" asp-action="ControladorVistaModel"> Controlador -> Vista-Modelo</a>
 	</li>
 	<li>
-		@Html.ActionLink("Vista --> Controller GET", "VistaControllerGet","Informacion", new{ saludo ="Alejandro",year=2025})
+		@Html.ActionLink("Vista --> Controller GET con 2 parametros", "VistaControllerGet","Informacion", new{ saludo ="Alejandro",year=2025})
+		
+	</li>
+	<li>
+		@Html.ActionLink("Vista --> Controller GET sin Parametros", "VistaControllerGet", "Informacion")
+		
+	</li>
+	<li>
+		@Html.ActionLink("Vista --> Controller GET con 1 parametro", "VistaControllerGet", "Informacion", new { year = 2025 })
 	</li>
 </ul>
 
