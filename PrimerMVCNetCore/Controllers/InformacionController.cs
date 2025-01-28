@@ -29,18 +29,36 @@ namespace PrimerMVCNetCore.Controllers
             persona.Edad = 22;
             return View(persona);
         }
-        public IActionResult VistaControllerGet(string saludo, int year) 
+        public IActionResult VistaControllerGet(string saludo, int? year) 
         {
-            if (saludo != null && year > 0)
+            
+            if (saludo != null && year != null)
             {
                 ViewData["DATA"] = "Hola " + saludo + ", año:" + year;
             }
-            else
+            else if (saludo == null && year == null) 
+            {
+                ViewData["DATA"] = "No se envianingun parametro";
+            }
+            else if (saludo == null)
             {
                 ViewData["DATA"] = "No se envia el parametro de saludo";
             }
-            
+            else 
+            {
+                ViewData["DATA"] = "No se envia el parametro year";
+            }
+
             return View();
+        }
+
+        [HttpPost]
+        [HttpGet]
+        public IActionResult VistaControllerPost(string cajanombre,string cajaemail,int cajaedad)
+        {
+            ViewData["DATA"] = "Nombre: " + cajanombre + " Email: " + cajaemail + " Edad: " + cajaedad;
+            
+            return View(); 
         }
     }
 }
