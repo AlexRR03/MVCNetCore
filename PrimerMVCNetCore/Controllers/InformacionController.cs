@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using PrimerMVCNetCore.Models;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace PrimerMVCNetCore.Controllers
 {
@@ -51,14 +52,23 @@ namespace PrimerMVCNetCore.Controllers
 
             return View();
         }
+        public IActionResult VistaControllerPost()
+        {
+            return View();
+        }
 
         [HttpPost]
-        [HttpGet]
-        public IActionResult VistaControllerPost(string cajanombre,string cajaemail,int cajaedad)
+        //public IActionResult VistaControllerPost(string nombre,string email,int edad)
+        //{
+        //    ViewData["DATA"] = "Nombre: " + nombre + " Email: " + email + " Edad: " + edad;
+
+        //    return View(); 
+        //}
+        public IActionResult VistaControllerPost(Persona persona,string aficiones) 
         {
-            ViewData["DATA"] = "Nombre: " + cajanombre + " Email: " + cajaemail + " Edad: " + cajaedad;
-            
-            return View(); 
+            ViewData["DATA"] = "Nombre: " + persona.Nombre+ " Email: " + persona.Email + " Edad: " + persona.Edad +"\n y sus afiones son: "+ aficiones;
+
+            return View();
         }
     }
 }

@@ -1,0 +1,26 @@
+﻿@model List<int>
+
+<h1>Conjetura Collatz</h1>
+
+<form method="post">
+	<label>Numero 1</label>
+	<input type="number" name="numero" value="" class=" form-control" />
+	<hr />
+	<button class="btn btn-info">
+		Enviar informacion
+	</button>
+</form>
+
+@if(Model!=null){
+<ul>
+	@foreach(int numero in Model)
+	{
+		<li>@numero</li>
+	}
+
+</ul>
+}
+else{
+	<p>No hay datos</p>
+}
+
